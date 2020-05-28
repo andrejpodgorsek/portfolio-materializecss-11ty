@@ -100,23 +100,40 @@ tech:
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Andrej Podgorsek</title>
-
-  <!-- CSS  -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection" />
-  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
-  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/materialize-social@1.0.3/materialize-social.min.css" rel="stylesheet">
-
-  <script src="https://code.iconify.design/1/1.0.6/iconify.min.js"></script>
-
-</head>
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-166010571-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+  
+      gtag('config', 'UA-166010571-1');
+    </script>
+  
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Andrej Podgorsek</title>
+  
+    <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/materialize-social@1.0.3/materialize-social.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" rel="stylesheet">
+  
+    <!-- JS  -->
+    <script src="https://code.iconify.design/1/1.0.6/iconify.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+  </head>
 
 <body>
+<!-- Hi, nice of you searching for the Source. :-) If you are looking for new opportunities as a Java/Javascript developer, drop me a ping -->
+<!--  ______  --> 
+<!-- | |__| | -->
+<!-- |  ()  | -->
+<!-- |______| -->
 
 
 
@@ -130,15 +147,16 @@ tech:
           <a id="logo-container" href="#" class="brand-logo left white-text">{{ header.name }}</a>
 
           <ul class="right hide-on-med-and-down blu">
-            <li><a class="waves-effect waves-light btn blue" href="{{ cv }}"><i
-                  class="material-icons right">file_download</i>CV</a>
+            <li>
+              <a class="waves-effect waves-light btn wow animate__animated animate__tada" href="{{ cv }}"><i
+                class="material-icons right">file_download</i>CV</a>
             </li>
           </ul>
 
           <ul id="nav-mobile" class="sidenav">
             <li>
               <a class="waves-effect waves-light btn" href="{{ header.cv }}"><i
-                  class="material-icons right">file_download</i>CV</a>
+                class="material-icons right">file_download</i>CV</a>
             </li>
           </ul>
           <a href="#" data-target="nav-mobile" class="sidenav-trigger white-text right"><i
@@ -152,7 +170,7 @@ tech:
         <br><br>
         <h1 class="header center white-text text-lighten-2">{{ header.title }}</h1>
         <div class="row center">
-          <h5 class="header col s12 light">{{ quotes.firstquote }}</h5>
+          <h5 class="header col s12 light wow animate__animated animate__bounceInLeft">{{ quotes.firstquote }}</h5>
         </div>
 
         <br><br>
@@ -166,7 +184,7 @@ tech:
 
   <!--   Skills   -->
   <div class="container">
-    <div class="section card-panel">
+    <div class="section card-panel wow animate__animated animate__fadeIn" data-wow-duration="2s"">
 
       
       
@@ -200,7 +218,7 @@ tech:
     <div class="section no-pad-bot">
       <div class="container">
         <div class="row center">
-          <h5 class="header col s12 light">{{ quotes.secondquote }}</h5>
+          <h5 class="header col s12 light wow animate__animated animate__bounceInRight">{{ quotes.secondquote }}</h5>
         </div>
       </div>
     </div>
@@ -213,12 +231,13 @@ tech:
 
       {% for item in tech %}  
           {% assign row = forloop.index | modulo:4 %}
+
           {% if row == "1" %}
             <div class="row">
           {% endif %}
           
           <div class="col s12 m6 l3">
-          <div class="card small">
+          <div class="card small wow animate__animated animate__fadeInUp" data-wow-delay="0.{{forloop.index0 | modulo:4 | plus:2}}s">
             <div class="card-image waves-effect waves-block waves-light">
               <img class="activator"
                 src="{{ item.img }}">
@@ -254,7 +273,7 @@ tech:
     <div class="section no-pad-bot">
       <div class="container">
         <div class="row center">
-          <h5 class="header col s12 light">{{ quotes.thirdquote }}</h5>
+          <h5 class="header col s12 light wow animate__animated animate__bounceInLeft">{{ quotes.thirdquote }}</h5>
         </div>
       </div>
     </div>
@@ -292,7 +311,7 @@ tech:
               </div>
               <div class="row">
                 <div class="input-field col s12">
-                  <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                  <button class="btn waves-effect waves-light wow animate__animated animate__bounceInUp" type="submit" name="action">Submit
                     <i class="material-icons right">send</i>
                   </button>
                 </div>
@@ -301,16 +320,16 @@ tech:
           </div>
 
           <div>
-            <a class="waves-effect waves-light btn-floating social linkedin"
+            <a class="waves-effect waves-light btn-floating social linkedin wow animate__animated animate__bounceInUp"
               href="https://www.linkedin.com/in/drejc/"><i class="fa fa-linkedin"></i> Sign in with
               linkedin</a>
-            <a class="waves-effect waves-light btn-floating social github" href="https://github.com/andrejpodgorsek"><i
+            <a class="waves-effect waves-light btn-floating social github wow animate__animated animate__bounceInUp" data-wow-delay="0.2s" href="https://github.com/andrejpodgorsek"><i
                 class="fa fa-github"></i> Sign in with
               linkedin</a>
-            <a class="waves-effect waves-light btn-floating social facebook"
+            <a class="waves-effect waves-light btn-floating social facebook wow animate__animated animate__bounceInUp" data-wow-delay="0.4s"
               href="https://www.facebook.com/andrejpodgorsek"><i class="fa fa-facebook"></i> Sign in with
               linkedin</a>
-            <a class="waves-effect waves-light btn-floating social twitter" href="https://twitter.com/anpod"><i
+            <a class="waves-effect waves-light btn-floating social twitter wow animate__animated animate__bounceInUp" data-wow-delay="0.6s" href="https://twitter.com/anpod"><i
                 class="fa fa-twitter"></i> Sign in with
               linkedin</a>
           </div>
@@ -326,7 +345,7 @@ tech:
     <div class="section no-pad-bot">
       <div class="container">
         <div class="row center">
-          <h5 class="header col s12 light">"Passion is inversely proportional to the amount of real information
+          <h5 class="header col s12 light wow animate__animated animate__bounceInRight">"Passion is inversely proportional to the amount of real information
             available." - Gregory Benford</h5>
         </div>
       </div>
@@ -341,21 +360,22 @@ tech:
           <h5 class="white-text">Bio</h5>
           <p class="grey-text text-lighten-4">I have studied Applied Mathematics and Computer Engineering on University
             of Ljubljana, the capital city of the beautiful Slovenia. I eventually settled down in Munich, Germany where
-            I now live and work. I am fluent in German, English, Croatian, Serbian and of course Slovenian.</p>
+            I now live and work. I am fluent in German, English, Croatian, Serbian and of course Slovenian. I am employed by 
+            <a href="https://www.is2.de" class="lime-text text-lighten-4">iS2 AG</a> as an (prototyping) Enterprise Architect.</p>
 
         </div>
         <div class="col l3 s12">
           <h5 class="white-text">Connect with me</h5>
-          <a class="waves-effect waves-light btn-floating social linkedin" href="https://www.linkedin.com/in/drejc/"><i
+          <a class="waves-effect waves-light btn-floating social linkedin wow animate__animated animate__heartBeat " href="https://www.linkedin.com/in/drejc/"><i
               class="fa fa-linkedin"></i> Sign in with
             linkedin</a>
-          <a class="waves-effect waves-light btn-floating social github" href="https://github.com/andrejpodgorsek"><i
+          <a class="waves-effect waves-light btn-floating social github wow animate__animated animate__heartBeat " href="https://github.com/andrejpodgorsek"><i
               class="fa fa-github"></i> Sign in with
             linkedin</a>
-          <a class="waves-effect waves-light btn-floating social facebook"
+          <a class="waves-effect waves-light btn-floating social facebook wow animate__animated animate__heartBeat "
             href="https://www.facebook.com/andrejpodgorsek"><i class="fa fa-facebook"></i> Sign in with
             linkedin</a>
-          <a class="waves-effect waves-light btn-floating social twitter" href="https://twitter.com/anpod"><i
+          <a class="waves-effect waves-light btn-floating social twitter wow animate__animated animate__heartBeat " href="https://twitter.com/anpod"><i
               class="fa fa-twitter"></i> Sign in with
             linkedin</a>
         </div>
@@ -363,6 +383,7 @@ tech:
           <h5 class="white-text">Powered by</h5>
           <ul>
             <li><a class="white-text" href="#!">Netlify</a> </li>
+            <li><a class="white-text" href="#!">11ty</a> </li>
             <li><a class="white-text" href="#!">Github</a></li>
             <li><a class="white-text" href="#!">AWS Lambda</a></li>
             <li><a class="white-text" href="#!">React.js</a></li>
@@ -374,7 +395,7 @@ tech:
     </div>
     <div class="footer-copyright">
       <div class="container">
-        Made by Andrej Podgoršek using <a class="brown-text text-lighten-3"
+        Made by Andrej Podgoršek using <a class="lime-text text-lighten-3"
           href="http://materializecss.com">Materialize</a>
       </div>
     </div>
