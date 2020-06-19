@@ -11,7 +11,7 @@ quotes:
   thirdquote: "\"The explanation requiring the fewest assumptions is most likely to be
             correct.\" - William of Occam"
 
-skills:
+skillsfirst:
   - icon: build
     headline: Software Development
     text: I am an experienced Senior Software Developer with more than decade of experience Designing
@@ -24,6 +24,7 @@ skills:
   - icon: settings
     headline: DevOps
     text: On my recent Projects I've mostly used and configured CI/CD Pipelines based on Git, Docker, Jenkins and Kubernetes. I have also gathered extensive experience in configuring Websphere, WebLogic and JBoss Java EE Application Servers and WAS Liberty, Wildfly, Tomcat, Spring Boot and Quarkus microcontainers. For Scripting Automation I am using Bash and Ansible.
+skillssecond:
   - icon: bug_report
     headline: Test Automation
     text: As a proponent of Test Driven Development I have also been working as a Test Automation Specialist & Consultant. I have sucessfully implemented and configured Automated Test Pipelines using Jenkins as an Orchestrator. For e2e Tests the preferred Tools are nodejs, jest, Puppeteer, Selenium. On the API Front I am automating tests mostly using, Postman, Bash and Powershell. Standard JUnit Libraries and its derivatives souch as arquillian are not a stranger also.
@@ -189,13 +190,32 @@ tech:
       
       
 
-        {% for item in skills %}  
+        {% for item in skillsfirst %}  
           {% assign row = forloop.index | modulo:3 %}
           {% if row == "1" %}
             <div class="row">
           {% endif %}
           
           <div class="col s12 m4">
+            <div class="icon-block">
+              <h2 class="center brown-text"><i class="material-icons">{{ item.icon }}</i></h2>
+              <h5 class="center">{{ item.headline }}</h5>
+              <p class="light">{{ item.text }}</p>
+            </div>
+          </div>
+          {% if row == "0" %}
+            </div>
+          {% endif %}
+       
+        {% endfor %} 
+
+        {% for item in skillssecond %}  
+          {% assign row = forloop.index | modulo:4 %}
+          {% if row == "1" %}
+            <div class="row">
+          {% endif %}
+          
+          <div class="col s12 m3">
             <div class="icon-block">
               <h2 class="center brown-text"><i class="material-icons">{{ item.icon }}</i></h2>
               <h5 class="center">{{ item.headline }}</h5>
@@ -358,7 +378,7 @@ tech:
       <div class="row">
         <div class="col l6 s12">
           <h5 class="white-text">Bio</h5>
-          <p class="grey-text text-lighten-4">I have studied Applied Mathematics and Computer Engineering on University
+          <p class="grey-text text-lighten-4">I have studied Applied Mathematics and Computer Engineering at the University
             of Ljubljana, the capital city of the beautiful Slovenia. I eventually settled down in Munich, Germany where
             I now live and work. I am fluent in German, English, Croatian, Serbian and of course Slovenian. I am employed by 
             <a href="https://www.is2.de" class="lime-text text-lighten-4">iS2 AG</a> as an (prototyping) Enterprise Architect.</p>
